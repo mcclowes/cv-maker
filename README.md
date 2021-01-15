@@ -12,6 +12,11 @@ To make this CV your own:
 - Edit `src/sections` with your own CV content
 - Build the CV (see below)
 
+If you want to deploy the CV on the web:
+- Work out where you're going to build & host it (I suggest Vercel)
+- Replace the favicon
+- Make sure the styles all work online too
+
 ## Building
 
 `npm install && npm run build`
@@ -24,3 +29,14 @@ e.g. `npm run build -- engineering product'
 ## Styling
 
 You can create various themes in `src/styles`. `cv.css` is a good example of the what to do, including light/dark modes (which works on the web only)
+
+## Storing the PDFs
+
+If you want to keep the CVs in Git, I suggest using [git lfs](https://git-lfs.github.com/).
+
+If you DON'T want to keep the CVs in Git, stop tracking them through `.gitignore`:
+`echo .gitignore >> *.pdf`
+
+# API
+
+- `\page` creates a page break (otherwise it'll all be on one page)

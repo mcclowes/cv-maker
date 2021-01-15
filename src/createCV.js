@@ -18,6 +18,12 @@ const variations = {
       "./src/sections/education.md",
       "./src/sections/aboutme.md",
     ],
+    options: {
+      ...defaultOptions,
+      website: true,
+      primary: true,
+      debug: true,
+    },
   },
   engineering_fullstack: {
     files: [
@@ -27,12 +33,6 @@ const variations = {
       "./src/sections/education.md",
       "./src/sections/aboutme.md",
     ],
-    options: {
-      ...defaultOptions,
-      website: true,
-      primary: true,
-      debug: true,
-    },
   },
 };
 

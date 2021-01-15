@@ -1,3 +1,3 @@
-# Max Clayton Clowes
+# Joe Bloggs
 
-[contact@mcclowes.com](mailto:contact@mcclowes.com) · [+44 (0) 7976 136 097](tel:+447976136097) · [mcclowes.com](https://bit.ly/mcclowes)
+[contact@joebloggs.com](mailto:contact@joebloggs.com) · [+44 (0) 7777 888 999](tel:+447777888999) · [joebloggs.com](https://joebloggs.com)
