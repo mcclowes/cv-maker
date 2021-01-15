@@ -1,0 +1,179 @@
+@media (prefers-color-scheme: light) {
+  :root {
+    --white: #ffffff;
+    --primary-light: #8ee3c6;
+    --primary: #437868;
+    --primary-dark: #2e5a4d;
+    --gray: #666;
+    --black: #171d1b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #18191a;
+    --primary-light: #dda1b7;
+    --primary: #dda1b7;
+    --primary-dark: #dda1b7;
+    --gray: #ccc;
+    --black: #ffffff;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  color: var(--black);
+  background-color: var(--white);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-family: avenir next, helvetica, sans-serif;
+  color: var(--black);
+}
+
+h1,
+h2,
+h3,
+h4 {
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+h1 + p {
+  margin-top: 3px;
+}
+
+h2 {
+  border-bottom: 2px solid var(--black);
+  display: flex;
+  margin-block-start: 1.2em;
+  padding-bottom: 0.3em;
+}
+
+h3 {
+  margin-block-start: 1em;
+  color: var(--primary-dark);
+}
+
+h3 em {
+  font-style: normal;
+  font-weight: lighter;
+}
+
+h4 {
+  color: var(--primary-dark);
+  font-weight: normal;
+}
+
+h3,
+h4 {
+  margin-block-end: 3px;
+}
+
+h3 + p,
+h3 + h4,
+h4 + p {
+  margin-block-start: 3px;
+}
+
+h3 + p {
+  margin-block-end: 3px;
+}
+
+h3 + p + p {
+  margin-block-start: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
+em {
+  color: var(--gray);
+}
+
+strong {
+  color: var(--primary-dark);
+}
+
+blockquote {
+  color: var(--primary-light);
+}
+
+hr {
+  opacity: 0.2;
+}
+
+@page {
+  margin: 0;
+}
+
+.pages.web {
+  max-width: 700px;
+}
+
+.page {
+  column-count: 2;
+  column-fill: auto;
+  column-gap: 1cm;
+  column-width: 8cm;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -webkit-column-width: 8cm;
+  -moz-column-width: 8cm;
+  -webkit-column-gap: 1cm;
+  -moz-column-gap: 1cm;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.pdf .page,
+.debug .page {
+  height: 279.4mm;
+  width: 215.9mm;
+  text-rendering: optimizeLegibility;
+  page-break-before: always;
+  page-break-after: always;
+  padding: 1cm 1.7cm;
+  padding-bottom: 1.5cm;
+}
+
+.debug .page {
+  border: 1px solid white;
+}
+
+ul {
+  padding-inline-start: 1em;
+}
+
+h3 + ul {
+  padding-inline-start: 0;
+  list-style-type: none;
+  margin-top: 3px;
+}

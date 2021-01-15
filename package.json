@@ -1,0 +1,60 @@
+{
+  "name": "cv-maker",
+  "version": "1.0.0",
+  "description": "Create CVs from Markdown",
+  "main": "mcclowes_cv.html",
+  "scripts": {
+    "build": "babel-node ./src/createCV.js",
+    "watch": "watch 'npm run build' ./src --wait=1",
+    "format": "prettier --write src/",
+    "format:staged": "pretty-quick --staged --pattern ./src/**",
+    "test": "jest",
+    "test:watch": "jest --watch --runInBand --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcclowes/cv-maker.git"
+  },
+  "keywords": [
+    "cv",
+    "pdf"
+  ],
+  "author": "mcclowes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcclowes/cv-maker/issues"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run format:staged && echo Did you remember to build the CV?"
+    }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js?$": "babel-jest",
+      "^.+\\.md?$": "markdown-loader-jest"
+    }
+  },
+  "homepage": "https://github.com/mcclowes/cv-maker#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.1",
+    "babel-jest": "^26.6.3",
+    "copyfiles": "^2.4.0",
+    "fs": "0.0.1-security",
+    "html-pdf-chrome": "^0.6.1",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "lodash": "^4.17.20",
+    "markdown-loader-jest": "^0.1.1",
+    "marked": "^1.2.4",
+    "merge-md": "^1.0.3",
+    "path": "^0.12.7",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.1.0",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {}
+}
