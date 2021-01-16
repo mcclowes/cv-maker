@@ -2,7 +2,7 @@
   "name": "cv-maker",
   "version": "1.0.0",
   "description": "Create CVs from Markdown",
-  "main": "mcclowes_cv.html",
+  "main": "index.html",
   "scripts": {
     "build": "babel-node ./src/createCV.js",
     "watch": "watch 'npm run build' ./src --wait=1",
