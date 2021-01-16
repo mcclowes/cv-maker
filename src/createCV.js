@@ -9,6 +9,15 @@ const defaultOptions = {
   },
 };
 
+const meta = {
+  name: "Joe Bloggs",
+  description: "Enter a summary of you here.",
+  previewImage: "https://cv.joebloggs.com/preview.png",
+  previewImageText: "Joe Bloggs CV",
+  url: "https://cv.joebloggs.com/",
+  twitterUsername: "@joebloggs",
+}
+
 const variations = {
   engineering_frontend: {
     files: [
@@ -41,7 +50,13 @@ const DEFAULT_CV = "engineering_frontend"
 const MY_NAME = "joebloggs"
 
 const createCV = (variation) => {
-  const { files, options = defaultOptions } = variations[variation];
+  const { files, customOptions } = variations[variation];
+
+  const options = {
+    meta,
+    ...defaultOptions,
+    ...customOptions,
+  }
 
   const destination = options.primary
     ? `./${MY_NAME}.pdf`
