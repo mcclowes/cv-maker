@@ -4,13 +4,12 @@ exports[`generateHtml default 1`] = `
 "
 		<html>
 			<head>
-				<title>Max Clayton Clowes CV</title>
+        <title>CV</title>
+    <meta name=\\"description\\" content=\\"CV made with cv-maker\\">
 
-				<meta name=\\"description\\" content=\\"The CV of Max Clayton Clowes\\">
+    <meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
 
-				<meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
-
-				<link rel=\\"icon\\" href=\\"/favicon.ico\\" />
+    <link rel=\\"icon\\" href=\\"/favicon.ico\\" />
 
 				<style>
 					@media (prefers-color-scheme: light) {
@@ -58,7 +57,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+li {
   font-family: avenir next, helvetica, sans-serif;
   color: var(--black);
 }
@@ -80,7 +80,7 @@ h1 + p {
 h2 {
   border-bottom: 2px solid var(--black);
   display: flex;
-  margin-block-start: 1.2em;
+  margin-block-start: 1em;
   padding-bottom: 0.3em;
 }
 
@@ -179,6 +179,12 @@ hr {
 
 ul {
   padding-inline-start: 1em;
+}
+
+ul,
+ol {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 h3 + ul {
@@ -248,13 +254,31 @@ exports[`generateHtml for website 1`] = `
 "
 		<html>
 			<head>
-				<title>Max Clayton Clowes CV</title>
+        
+    <title>Joe Bloggs CV</title>
+    <meta name=\\"description\\" content=\\"Enter a summary of you here.\\">
 
-				<meta name=\\"description\\" content=\\"The CV of Max Clayton Clowes\\">
+    <meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
 
-				<meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
+    <link rel=\\"icon\\" href=\\"/favicon.ico\\" />
 
-				<link rel=\\"icon\\" href=\\"/favicon.ico\\" />
+    <!--  Social tags -->
+    <!--  Essential META Tags -->
+    <meta property=\\"og:title\\" content=\\"The CV of Joe Bloggs\\">
+    <meta property=\\"og:description\\" content=\\"Enter a summary of you here.\\">
+    <meta property=\\"og:image\\" content=\\"https://cv.joebloggs.com/preview.png\\">
+    <meta property=\\"og:url\\" content=\\"https://cv.joebloggs.com/\\">
+    <meta name=\\"twitter:card\\" content=\\"summary_large_image\\">
+
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property=\\"og:site_name\\" content=\\"The CV of Joe Bloggs\\">
+    <meta name=\\"twitter:image:alt\\" content=\\"Joe Bloggs CV\\">
+
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta name=\\"twitter:site\\" content=\\"@joebloggs\\">
+  
 
 				<style>
 					@media (prefers-color-scheme: light) {
@@ -302,7 +326,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+li {
   font-family: avenir next, helvetica, sans-serif;
   color: var(--black);
 }
@@ -324,7 +349,7 @@ h1 + p {
 h2 {
   border-bottom: 2px solid var(--black);
   display: flex;
-  margin-block-start: 1.2em;
+  margin-block-start: 1em;
   padding-bottom: 0.3em;
 }
 
@@ -423,6 +448,12 @@ hr {
 
 ul {
   padding-inline-start: 1em;
+}
+
+ul,
+ol {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 h3 + ul {
@@ -492,13 +523,31 @@ exports[`generateHtml with array 1`] = `
 "
 		<html>
 			<head>
-				<title>Max Clayton Clowes CV</title>
+        
+    <title>Joe Bloggs CV</title>
+    <meta name=\\"description\\" content=\\"Enter a summary of you here.\\">
 
-				<meta name=\\"description\\" content=\\"The CV of Max Clayton Clowes\\">
+    <meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
 
-				<meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
+    <link rel=\\"icon\\" href=\\"/favicon.ico\\" />
 
-				<link rel=\\"icon\\" href=\\"/favicon.ico\\" />
+    <!--  Social tags -->
+    <!--  Essential META Tags -->
+    <meta property=\\"og:title\\" content=\\"The CV of Joe Bloggs\\">
+    <meta property=\\"og:description\\" content=\\"Enter a summary of you here.\\">
+    <meta property=\\"og:image\\" content=\\"https://cv.joebloggs.com/preview.png\\">
+    <meta property=\\"og:url\\" content=\\"https://cv.joebloggs.com/\\">
+    <meta name=\\"twitter:card\\" content=\\"summary_large_image\\">
+
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property=\\"og:site_name\\" content=\\"The CV of Joe Bloggs\\">
+    <meta name=\\"twitter:image:alt\\" content=\\"Joe Bloggs CV\\">
+
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta name=\\"twitter:site\\" content=\\"@joebloggs\\">
+  
 
 				<style>
 					@media (prefers-color-scheme: light) {
@@ -546,7 +595,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+li {
   font-family: avenir next, helvetica, sans-serif;
   color: var(--black);
 }
@@ -568,7 +618,7 @@ h1 + p {
 h2 {
   border-bottom: 2px solid var(--black);
   display: flex;
-  margin-block-start: 1.2em;
+  margin-block-start: 1em;
   padding-bottom: 0.3em;
 }
 
@@ -667,6 +717,12 @@ hr {
 
 ul {
   padding-inline-start: 1em;
+}
+
+ul,
+ol {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 h3 + ul {
@@ -781,13 +837,31 @@ exports[`generateHtml with standard options 1`] = `
 "
 		<html>
 			<head>
-				<title>Max Clayton Clowes CV</title>
+        
+    <title>Joe Bloggs CV</title>
+    <meta name=\\"description\\" content=\\"Enter a summary of you here.\\">
 
-				<meta name=\\"description\\" content=\\"The CV of Max Clayton Clowes\\">
+    <meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
 
-				<meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
+    <link rel=\\"icon\\" href=\\"/favicon.ico\\" />
 
-				<link rel=\\"icon\\" href=\\"/favicon.ico\\" />
+    <!--  Social tags -->
+    <!--  Essential META Tags -->
+    <meta property=\\"og:title\\" content=\\"The CV of Joe Bloggs\\">
+    <meta property=\\"og:description\\" content=\\"Enter a summary of you here.\\">
+    <meta property=\\"og:image\\" content=\\"https://cv.joebloggs.com/preview.png\\">
+    <meta property=\\"og:url\\" content=\\"https://cv.joebloggs.com/\\">
+    <meta name=\\"twitter:card\\" content=\\"summary_large_image\\">
+
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property=\\"og:site_name\\" content=\\"The CV of Joe Bloggs\\">
+    <meta name=\\"twitter:image:alt\\" content=\\"Joe Bloggs CV\\">
+
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta name=\\"twitter:site\\" content=\\"@joebloggs\\">
+  
 
 				<style>
 					@media (prefers-color-scheme: light) {
@@ -835,7 +909,8 @@ h1,
 h2,
 h3,
 h4,
-p {
+p,
+li {
   font-family: avenir next, helvetica, sans-serif;
   color: var(--black);
 }
@@ -857,7 +932,7 @@ h1 + p {
 h2 {
   border-bottom: 2px solid var(--black);
   display: flex;
-  margin-block-start: 1.2em;
+  margin-block-start: 1em;
   padding-bottom: 0.3em;
 }
 
@@ -956,6 +1031,12 @@ hr {
 
 ul {
   padding-inline-start: 1em;
+}
+
+ul,
+ol {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
 }
 
 h3 + ul {

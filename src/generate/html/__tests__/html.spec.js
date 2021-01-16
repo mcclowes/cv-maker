@@ -1,5 +1,14 @@
 import generateHtml from "../html";
 
+const CONFIG = {
+  name: "Joe Bloggs",
+  description: "Enter a summary of you here.",
+  previewImage: "https://cv.joebloggs.com/preview.png",
+  previewImageText: "Joe Bloggs CV",
+  url: "https://cv.joebloggs.com/",
+  twitterUsername: "@joebloggs",
+}
+
 const OPTIONS_DEFAULT = {
   debug: false,
   website: false,
@@ -7,6 +16,7 @@ const OPTIONS_DEFAULT = {
   printOptions: {
     displayHeaderFooter: false,
   },
+  meta: CONFIG,
 };
 
 describe("generateHtml", () => {

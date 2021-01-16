@@ -1,4 +1,13 @@
 const meta = (config) => {
+  if(!config || !config.name) {
+    return `<title>CV</title>
+    <meta name="description" content="CV made with cv-maker">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no">
+
+    <link rel="icon" href="/favicon.ico" />`
+  }
+
   return `
     <title>${config.name} CV</title>
     <meta name="description" content="${config.description}">

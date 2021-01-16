@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`meta generates correct meta html 1`] = `
+"
+    <title>Joe Bloggs CV</title>
+    <meta name=\\"description\\" content=\\"Enter a summary of you here.\\">
+
+    <meta name=\\"viewport\\" content=\\"width=device-width,initial-scale=1,maximum-scale=2,shrink-to-fit=no\\">
+
+    <link rel=\\"icon\\" href=\\"/favicon.ico\\" />
+
+    <!--  Social tags -->
+    <!--  Essential META Tags -->
+    <meta property=\\"og:title\\" content=\\"The CV of Joe Bloggs\\">
+    <meta property=\\"og:description\\" content=\\"Enter a summary of you here.\\">
+    <meta property=\\"og:image\\" content=\\"https://cv.joebloggs.com/preview.png\\">
+    <meta property=\\"og:url\\" content=\\"https://cv.joebloggs.com/\\">
+    <meta name=\\"twitter:card\\" content=\\"summary_large_image\\">
+
+
+    <!--  Non-Essential, But Recommended -->
+    <meta property=\\"og:site_name\\" content=\\"The CV of Joe Bloggs\\">
+    <meta name=\\"twitter:image:alt\\" content=\\"Joe Bloggs CV\\">
+
+
+    <!--  Non-Essential, But Required for Analytics -->
+    <meta name=\\"twitter:site\\" content=\\"@joebloggs\\">
+  "
+`;
