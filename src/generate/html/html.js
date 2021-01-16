@@ -1,11 +1,10 @@
 import _ from "lodash";
+import fs from "fs";
 
 import readStylesheet from "./readStylesheet";
 import readMarkdownFile from "./readMarkdownFile";
 import createHtmlPages from "./createHtmlPages";
 import meta from "./meta";
-
-import fs from "fs";
 
 const STYLESHEETS = {
   cv: "./src/styles/cv.css",

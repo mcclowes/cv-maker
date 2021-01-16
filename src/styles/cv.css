@@ -1,9 +1,9 @@
 @media (prefers-color-scheme: light) {
   :root {
     --white: #ffffff;
-    --primary-light: #8ee3c6;
-    --primary: #437868;
-    --primary-dark: #2e5a4d;
+    --primary-light: #617bab;
+    --primary: #435578;
+    --primary-dark: #3d4e6e;
     --gray: #666;
     --black: #171d1b;
   }
@@ -11,9 +11,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --white: #18191a;
-    --primary-light: #dda1b7;
-    --primary: #dda1b7;
-    --primary-dark: #dda1b7;
+    --primary-light: #ddb2a1;
+    --primary: #ddb2a1;
+    --primary-dark: #ddb2a1;
     --gray: #ccc;
     --black: #ffffff;
   }
@@ -68,6 +68,7 @@ h2 {
   display: flex;
   margin-block-start: 1em;
   padding-bottom: 0.3em;
+  width: max-content;
 }
 
 h3 {

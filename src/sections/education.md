@@ -5,7 +5,7 @@
 _2018 - 2020_  
 Dissertation: _Some cool use of AI presumably_
 
-### High School _VGHS_
+### High School _- VGHS_
 
 _2011 - 2018_  
 A levels: _Physics, Economics, Maths_
