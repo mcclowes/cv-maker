@@ -4,7 +4,7 @@
 
 _December 2019 - Ongoing_
 
-Advanced product bookings and payment platform, and internal inventory management application (React/TS/Next.js/GraphQL/Apollo). Pioneered best technical and project management practices. Participated in engeering recruitment.
+Describe what you worked on and what you contributed. Ideally show off something unobvious, that might not typically be in a role like this - e.g. getting involved in recruitment, or training team members.
 
 ### Other Experience
 
