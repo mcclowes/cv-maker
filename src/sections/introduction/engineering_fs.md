@@ -1,6 +1,8 @@
-Some other introduction that sells you as a full stack developer. Keep it brief and ideally heavily tailored to the role.
+<p class="full-width">Some other introduction that sells you as a full stack developer. Keep it brief and ideally heavily tailored to the role. Some other introduction that sells you as a full stack developer. Keep it brief and ideally heavily tailored to the role.</p>
 
-_References available upon request. You can see what people have said about me [here](https://github.com/mcclowes/mcclowes/blob/master/recommendations.md)._
+<p class="full-width"><i>References available upon request. You can see what people have said about me <a href="https://github.com/mcclowes/mcclowes/blob/master/recommendations.md">here</a>.</i></p>
+
+<hr class="full-width"/>
 
 ## Technical Skills
 

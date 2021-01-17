@@ -21,14 +21,13 @@ const meta = {
 const variations = {
   engineering_frontend: {
     files: [
-      "./src/sections/header.md",
+      "./src/sections/header/engineering_fe.md",
       "./src/sections/introduction/engineering_fe.md",
       "./src/sections/experience/engineering_fe.md",
-      "./src/sections/education.md",
+      "./src/sections/education/engineering_fe.md",
       "./src/sections/aboutme.md",
     ],
     customOptions: {
-      ...defaultOptions,
       website: true,
       primary: true,
       debug: true,
@@ -36,12 +35,19 @@ const variations = {
   },
   engineering_fullstack: {
     files: [
-      "./src/sections/header.md",
-      "./src/sections/introduction/engineering_fullstack.md",
-      "./src/sections/experience/engineering_fullstack.md",
-      "./src/sections/education.md",
+      "./src/sections/header/engineering_fs.md",
+      "./src/sections/introduction/engineering_fs.md",
+      "./src/sections/experience/engineering_fs.md",
+      "./src/sections/education/engineering_fs.md",
       "./src/sections/aboutme.md",
     ],
+    customOptions: {
+      debug: true,
+      style: [
+        "cv",
+        "newspaper",
+      ],
+    },
   },
 };
 

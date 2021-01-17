@@ -1,6 +1,6 @@
 
-		<html>
-			<head>
+    <html>
+      <head>
         
     <title>Joe Bloggs CV</title>
     <meta name="description" content="Enter a summary of you here.">
@@ -27,8 +27,8 @@
     <meta name="twitter:site" content="@joebloggs">
   
 
-				<style>
-					@media (prefers-color-scheme: light) {
+        <style>
+          @media (prefers-color-scheme: light) {
   :root {
     --white: #ffffff;
     --primary-light: #617bab;
@@ -53,8 +53,11 @@ html,
 body {
   padding: 0;
   margin: 0;
+  
   color: var(--black);
   background-color: var(--white);
+
+  font-size: 11pt;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -69,6 +72,8 @@ body {
   justify-content: center;
 }
 
+/* Fonts */
+
 h1,
 h2,
 h3,
@@ -77,12 +82,6 @@ p,
 li {
   font-family: avenir next, helvetica, sans-serif;
   color: var(--black);
-}
-
-h1,
-h2,
-h3,
-h4 {
 }
 
 h1 {
@@ -96,9 +95,8 @@ h1 + p {
 h2 {
   border-bottom: 2px solid var(--black);
   display: flex;
-  margin-block-start: 1em;
+  margin-block-start: 0.75em;
   padding-bottom: 0.3em;
-  width: max-content;
 }
 
 h3 {
@@ -112,6 +110,7 @@ h3 em {
 }
 
 h4 {
+  margin-block-start: 1em;
   color: var(--primary-dark);
   font-weight: normal;
 }
@@ -135,6 +134,8 @@ h3 + p + p {
   margin-block-start: 3px;
 }
 
+/* Text Styling */
+
 a {
   text-decoration: none;
   color: var(--primary);
@@ -157,9 +158,14 @@ blockquote {
   color: var(--primary-light);
 }
 
+/* Other widgets */
+
 hr {
   opacity: 0.2;
+  margin: 1.5em 0;
 }
+
+/* Page */
 
 @page {
   margin: 0;
@@ -172,7 +178,6 @@ hr {
 .page {
   position: relative;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .pdf .page,
@@ -194,6 +199,8 @@ hr {
   padding: 1.6em 1em;
 }
 
+/* Lists */
+
 ul {
   padding-inline-start: 1em;
 }
@@ -204,27 +211,67 @@ ol {
   margin-block-end: 0.5em;
 }
 
+h2 + ul,
 h3 + ul {
   padding-inline-start: 0;
   list-style-type: none;
   margin-top: 3px;
 }
 
-				</style>
-			</head>
-			
-			<body class="document">
-				<div class="pages debug">
-					<div class="page" id="p1"><h1 id="joe-bloggs">Joe Bloggs</h1>
-<p><a href="mailto:contact@joebloggs.com">contact@joebloggs.com</a> · <a href="tel:+447777888999">+44 (0) 7777 888 999</a> · <a href="https://joebloggs.com">joebloggs.com</a></p>
- <p>Some introduction that sells you as a frontend developer. Keep it brief and ideally heavily tailored to the role.</p>
-<p><em>References available upon request. You can see what people have said about me <a href="https://github.com/mcclowes/mcclowes/blob/master/recommendations.md">here</a>.</em></p>
+.pages.web ol {
+  padding-inline-start: 1em;
+}
+
+.pages:not(.web) ol {
+  padding-inline-start: 0;
+}
+
+ol li {
+  margin-bottom: 0.5em;
+  /* text-align: justify; */
+  /* text-justify: inter-word; */
+}.pdf .page {
+  column-count: 2;
+  column-fill: auto;
+  column-gap: 1cm;
+  column-width: 8cm;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -webkit-column-width: 8cm;
+  -moz-column-width: 8cm;
+  -webkit-column-gap: 1cm;
+  -moz-column-gap: 1cm;
+}
+
+.pdf .full-width {
+  column-span: all;
+}
+
+.pdf .full-width + h2:not(.full-width) {
+  margin-top: 0;
+}
+        </style>
+      </head>
+      
+      <body class="document">
+        <div class="pages debug pdf">
+          <div class="page" id="p1"><h1 class="full-width">Joe Bloggs</h1>
+
+<p class="full-width">
+    <a href="mailto:contact@joebloggs.com">contact@joebloggs.com</a> · <a href="tel:+447777888999">+44 (0) 7777 888 999</a> · <a href="https://joebloggs.com">joebloggs.com</a>
+</p>
+ <p class="full-width">Some other introduction that sells you as a full stack developer. Keep it brief and ideally heavily tailored to the role. Some other introduction that sells you as a full stack developer. Keep it brief and ideally heavily tailored to the role.</p>
+
+<p class="full-width"><i>References available upon request. You can see what people have said about me <a href="https://github.com/mcclowes/mcclowes/blob/master/recommendations.md">here</a>.</i></p>
+
+<hr class="full-width"/>
+
 <h2 id="technical-skills">Technical Skills</h2>
-<p><strong>Software Engineering:</strong> <em>React, TypeScript, GraphQL/Apollo, Jest/react-testing-library/Enzyme, Redux, CSS/Styled-Components (Responsive), React Native</em><br><strong>Data:</strong> <em>Python, SQL, R, Excel/Google Sheets</em><br><strong>Project Management:</strong> <em>Agile (Scrum)</em><br><strong>Design:</strong> <em>Figma/Sketch, Adobe CS</em></p>
+<p><strong>Software Engineering:</strong> <em>React (TS), GraphQL/Apollo, Python, Ruby, Node, Jest/react-testing-library/Enzyme, CSS/Styled-Components (Responsive), React Native</em><br><strong>Data:</strong> <em>Python, SQL, R, Excel/Google Sheets</em><br><strong>Project Management:</strong> <em>Agile (Scrum)</em><br><strong>Design:</strong> <em>Figma/Sketch, Adobe CS</em></p>
  <h2 id="experience">Experience</h2>
 <h3 id="software-engineer-fe---facebook">Software Engineer (FE) <em>- Facebook</em></h3>
 <p><em>December 2019 - Ongoing</em></p>
-<p>Describe what you worked on and what you contributed. Ideally show off something unobvious, that might not typically be in a role like this - e.g. getting involved in recruitment, or training team members.</p>
+<p>Here you can do some different working that emphasizes your more full-stack responsibilities - API development, etc.</p>
 <h3 id="other-experience">Other Experience</h3>
 <ul>
 <li>Intern <em>- Google, 2017</em></li>
@@ -235,7 +282,6 @@ h3 + ul {
 <p><em>2018 - 2020</em><br>Dissertation: <em>Some cool use of AI presumably</em></p>
 <h3 id="high-school---vghs">High School <em>- VGHS</em></h3>
 <p><em>2011 - 2018</em><br>A levels: <em>Physics, Economics, Maths</em></p>
-<p></div> <div class="page" id="p2"></p>
 <h3 id="other-training">Other Training</h3>
 <ul>
 <li>Advanced React Programming <em>- Some Place, 2018</em></li>
@@ -243,8 +289,10 @@ h3 + ul {
 </ul>
  <h2 id="about-me">About Me</h2>
 <p>Describe some of your interests here. There&#39;s room for some that feed into your future job, and there&#39;s room for some that are just fun. This is your to chance to show off a bit of personality.</p>
+<p>Describe some of your interests here. There&#39;s room for some that feed into your future job, and there&#39;s room for some that are just fun. This is your to chance to show off a bit of personality.</p>
+<p>Describe some of your interests here. There&#39;s room for some that feed into your future job, and there&#39;s room for some that are just fun. This is your to chance to show off a bit of personality.</p>
 </div>
-				</div>
-			</body>
-		</html>
-	
+        </div>
+      </body>
+    </html>
+  
