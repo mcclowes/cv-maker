@@ -1,0 +1,19 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: monthly
+      time: "11:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - mcclowes
+    groups:
+      # One PR/month for all minor + patch bumps. Majors stay separate so
+      # breaking changes are reviewed individually.
+      npm-minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"

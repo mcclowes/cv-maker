@@ -1,7 +1,8 @@
-## About Me
+<h2>
+	{{> icons/aboutme.svg}}
+	About me
+</h2>
 
-Describe some of your interests here. There's room for some that feed into your future job, and there's room for some that are just fun. This is your to chance to show off a bit of personality.
+Outside of work I'm a relentless maker — there's usually a side project on the go, and I write most of them up on my blog. I enjoy contributing to open source and turning up to local developer meet-ups.
 
-Describe some of your interests here. There's room for some that feed into your future job, and there's room for some that are just fun. This is your to chance to show off a bit of personality.
-
-Describe some of your interests here. There's room for some that feed into your future job, and there's room for some that are just fun. This is your to chance to show off a bit of personality.
+This is your chance to show a bit of personality. Mention the things that make you _you_ — a mix that feeds into your work and a few that are just for fun. Keep it to a few short, genuine sentences.

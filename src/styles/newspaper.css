@@ -1,14 +1,22 @@
 .pdf .page {
+  --gap: 0.75cm;
+  --width: 8cm;
+
   column-count: 2;
   column-fill: auto;
-  column-gap: 1cm;
-  column-width: 8cm;
+  column-gap: var(--gap);
+  column-width: var(--width);
   -webkit-column-count: 2;
   -moz-column-count: 2;
-  -webkit-column-width: 8cm;
-  -moz-column-width: 8cm;
-  -webkit-column-gap: 1cm;
-  -moz-column-gap: 1cm;
+  -webkit-column-width: var(--width);
+  -moz-column-width: var(--width);
+  -webkit-column-gap: var(--gap);
+  -moz-column-gap: var(--gap);
+}
+
+.pdf .page a {
+  --color-font-link: var(--color-primary);
+  text-decoration: underline;
 }
 
 .pdf .full-width {
@@ -16,5 +24,13 @@
 }
 
 .pdf .full-width + h2:not(.full-width) {
+  margin-top: 0;
+}
+
+.page p:first-child {
+  margin: 0;
+}
+
+.page p:first-child + h3 {
   margin-top: 0;
 }

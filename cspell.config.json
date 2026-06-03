@@ -1,0 +1,37 @@
+{
+  "version": "0.2",
+  "language": "en-GB",
+  "useGitignore": true,
+  "ignorePaths": [
+    "package-lock.json",
+    "**/_template.md",
+    "**/applications/**/jd.md"
+  ],
+  "overrides": [
+    {
+      "filename": "**/*.md",
+      "language": "en-GB"
+    }
+  ],
+  "words": [
+    "aboutme",
+    "Acme",
+    "Bloggs",
+    "frontmatter",
+    "GraphQL",
+    "Hons",
+    "joebloggs",
+    "lifecycles",
+    "PostgreSQL",
+    "Redis",
+    "roadmapping",
+    "Stripe",
+    "TypeScript",
+    "webhooks",
+    "wireframing"
+  ],
+  "flagWords": [
+    "hte",
+    "teh"
+  ]
+}

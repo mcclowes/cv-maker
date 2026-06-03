@@ -1,72 +1,51 @@
-# Max Clayton Clowes
+# Joe Bloggs
 
-[contact@mcclowes.com](mailto:contact@mcclowes.com) · [+44 (0) 7976 136 097](tel:+447976136097) · [mcclowes.com](https://mcclowes.com)
+[joe@example.com](mailto:joe@example.com) · [+44 (0) 7700 900 000](tel:+447700900000) · [joebloggs.com](https://joebloggs.com)
 
 ## Experience
 
-### Software Engineer (FE) _- Pollen_
+### Senior Software Engineer _- Example Corp_
 
-_December 2019 - Ongoing_
+_January 2021 - Present_
 
-Developed Pollen’s checkout and payment application (React/Next.js/GraphQL).
+Led the rebuild of the core web app (React/TypeScript), cutting page load times by 40%.
 
-### Software Engineer (FE) _- Workshare_
+### Software Engineer _- Startup Inc_
 
-_August 2018 - November 2019_
+_June 2018 - December 2020_
 
-Built Transact, a document management & sign-off web app (React/Redux). Collaborated with design to define roadmap. Trained junior team members and pioneered our best practices.
+Built the Node.js backend and React frontend for the flagship product from scratch. Owned the Stripe payments integration end-to-end.
 
-### Product Engineer & Manager _- Codogo_
+### Frontend Developer _- Web Agency_
 
-_April 2016 - August 2018_
+_2017 - 2018_
 
-Founded Codogo after winning several enterprise awards. Established an agency business, supporting development of our own product, Write. I personally:
+Delivered client websites and web apps across a range of modern technologies.
 
-- Designed and delivered products for 30+ clients ranging from the NHS to leading financial think-tanks.
-- Developed software, websites, web apps, and native apps, utilising a range of modern technologies.
-- Managed (Agile) and supported the growth of my small team.
-- Pitched to top investors, including being flown out to Y Combinator based on the strength of the Alpha of our product, Codogo Write.
+- Built responsive, accessible interfaces for 20+ clients.
+- Set up the agency's component library and build tooling.
 
 \page
 
 ### Other Experience
 
-- Development & Design Intern _- Akkroo, 2015_
-- Design Contractor _- Ludifi, 2014_
-- Design Contractor _- 4J Studios, 2013_
-- Junior UX Designer _- Better Brief, 2012 - 2013_
-- Project manager _- Godfreys.co, 2011 - 2012_
+- Software Engineering Intern _- Big Tech Co, 2016_
+- Freelance Developer _- Self-employed, 2015 - 2017_
 
 ## Education
 
-### BSc (Hons) Computer Science, 2:1 _- Durham University_
+### BSc (Hons) Computer Science, First Class _- Example University_
 
 _2012 - 2016_  
-British Computing Society accredited. Awarded Rising Star of Research.  
-Dissertation: _The use of evolutionary AI in the balancing of competitive multiplayer games_
-
-### BA Interaction Design (Year 1) _- Ravensbourne College of Design_
-
-_2011 - 2012_
-
-### Foundation Diploma in Art and Design _- London College of Communication_
-
-_2010 - 2011_  
-Graphic Design pathway
-
-### High School _- City of London School_
-
-_2003 - 2010_  
-A levels: _Physics, Economics, Music_
+Dissertation: _A real-time collaborative text editor using operational transforms_
 
 ### Other Training
 
-- Project Management _- SuperHi, 2019_
-- Advanced iOS Development _- City University, 2012_
-- Adva nced C Programming _- City University, 2011_
+- Advanced React Patterns _- Online Course, 2020_
+- Foundations of Distributed Systems _- Online Course, 2019_
 
 ## About Me
 
-Regularly attend PM conferences & meet-ups _(Elevate, Product School)_. Regularly attend developer meet-ups _(React London, GitHub Universe, Next Conf)_. Currently work mainly with React _(ES6)_.
+Regularly attend developer meet-ups _(React London, local JS user groups)_. Contribute to open source and write about engineering on my blog.
 
-Runner (1st marathon coming up in December), cyclist, rock climber, and dancer (1st place university circuit). Singer and multi-instrumentalist.
+Runner, climber, and amateur pianist. Always tinkering with a side project.

@@ -1,15 +1,22 @@
 {
   "name": "cv-maker",
-  "version": "1.0.0",
-  "description": "Create CVs from Markdown",
-  "main": "index.html",
+  "version": "2.0.0",
+  "type": "module",
+  "description": "Markdown-driven CV generator that renders styled HTML and PDF outputs via Playwright.",
+  "main": "src/createCV.js",
   "scripts": {
     "build": "babel-node ./src/createCV.js",
-    "watch": "watch 'npm run build' ./src --wait=1",
+    "watch": "chokidar './src/**/*' -c 'npm run build' --initial",
     "format": "prettier --write src/",
     "format:staged": "pretty-quick --staged --pattern ./src/**",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "spellcheck": "cspell --no-progress --config ./cspell.config.json \"src/sections/**/*.md\" \"src/cvs/**/*.md\" \"src/applications/**/*.md\"",
     "test": "jest",
-    "test:watch": "jest --watch --runInBand --bail"
+    "test:watch": "jest --watch --runInBand --bail",
+    "test:coverage": "jest --coverage",
+    "validate": "npm run lint && npm run test",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -17,44 +24,45 @@
   },
   "keywords": [
     "cv",
-    "pdf"
+    "resume",
+    "pdf",
+    "markdown",
+    "playwright"
   ],
   "author": "mcclowes",
   "license": "ISC",
+  "dependencies": {
+    "marked": "^9.0.3",
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.56.1"
+  },
   "bugs": {
     "url": "https://github.com/mcclowes/cv-maker/issues"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format:staged && echo Did you remember to build the CV?"
-    }
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.js?$": "babel-jest",
-      "^.+\\.md?$": "markdown-loader-jest"
-    }
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "src/{sections,cvs,applications}/**/*.md": [
+      "cspell --no-progress --config ./cspell.config.json"
+    ]
   },
   "homepage": "https://github.com/mcclowes/cv-maker#readme",
   "devDependencies": {
-    "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
-    "@babel/node": "^7.12.6",
-    "@babel/preset-env": "^7.12.1",
-    "babel-jest": "^26.6.3",
-    "copyfiles": "^2.4.0",
-    "fs": "0.0.1-security",
-    "html-pdf-chrome": "^0.6.1",
-    "husky": "^4.3.6",
-    "jest": "^26.6.3",
-    "lodash": "^4.17.20",
-    "markdown-loader-jest": "^0.1.1",
-    "marked": "^1.2.4",
-    "merge-md": "^1.0.3",
-    "path": "^0.12.7",
-    "prettier": "^2.1.2",
-    "pretty-quick": "^3.1.0",
-    "watch": "^1.0.2"
-  },
-  "dependencies": {}
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.12.13",
+    "@babel/node": "^7.22.19",
+    "@babel/preset-env": "^7.22.9",
+    "@eslint/js": "^9.0.0",
+    "babel-jest": "^29.7.0",
+    "chokidar-cli": "^3.0.0",
+    "cspell": "^8.13.3",
+    "eslint": "^9.0.0",
+    "husky": "^8.0.0",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.3",
+    "pretty-quick": "^4.0.0"
+  }
 }

@@ -1,92 +1,15 @@
-# PDF
+# PDF generation
 
-## printOptions
+PDFs are rendered with Playwright's Chromium engine. Install the runtime dependency in your project before building:
 
-### landscape
+```
+npm install --save-dev playwright-core
+```
 
-Paper orientation. Defaults to false.
+The generator automatically merges any `pdfOptions` you pass through `createCV` with the defaults below:
 
-`landscape?: boolean;`
+- `format`: Defaults to `"A4"`. Any format supported by [`page.pdf`](https://playwright.dev/docs/api/class-page#page-pdf) is accepted.
+- `margin`: All sides default to `"0cm"`. Provide a partial object (e.g. `{ top: "1cm" }`) to override individual edges.
+- `printBackground`: Defaults to `true` so background colors are preserved.
 
-### displayHeaderFooter
-
-Display header and footer. Defaults to false.
-
-`displayHeaderFooter?: boolean;`
-
-- Print background graphics. Defaults to false.
-  printBackground?: boolean;
-
-### ds
-
-- Scale of the webpage rendering. Defaults to 1.
-  scale?: number;
-
-### ds
-
-- Paper width in inches. Defaults to 8.5 inches.
-  paperWidth?: number;
-
-### ds
-
-- Paper height in inches. Defaults to 11 inches.
-  paperHeight?: number;
-
-### ds
-
-- Top margin in inches. Defaults to 1cm (~0.4 inches).
-  marginTop?: number;
-
-### ds
-
-- Bottom margin in inches. Defaults to 1cm (~0.4 inches).
-  marginBottom?: number;
-
-### ds
-
-- Left margin in inches. Defaults to 1cm (~0.4 inches).
-  marginLeft?: number;
-
-### ds
-
-- Right margin in inches. Defaults to 1cm (~0.4 inches).
-  marginRight?: number;
-
-### ds
-
-- Paper ranges to print, e.g., '1-5, 8, 11-13'.
-- Defaults to the empty string, which means print all pages.
-  pageRanges?: string;
-
-### ignoreInvalidPageRanges
-
-- Whether to silently ignore invalid but successfully parsed
-- page ranges, such as '3-2'. Defaults to false.
-  ignoreInvalidPageRanges?: boolean;
-
-### headerTemplate
-
-- HTML template for the print header.
-- Should be valid HTML markup with following classes used to inject printing values into them:
-- - `date` formatted print date
-- - `title` document title
-- - `url` document location
-- - `pageNumber` current page number
-- - `totalPages` total pages in the document
-
-*
-
-- For example, `<span class="title"></span>` would generate a span containing the title.
-  `headerTemplate?: string;`
-
-### footerTemplate
-
-HTML template for the print footer. Should use the same format as the `headerTemplate`.
-
-`footerTemplate?: string;`
-
-### preferCSSPageSize
-
-Whether or not to prefer page size as defined by css.
-Defaults to false, in which case the content will be scaled to fit the paper size.
-`preferCSSPageSize?: boolean;`
+Any additional options supported by Playwright's [`page.pdf`](https://playwright.dev/docs/api/class-page#page-pdf) API are forwarded untouched.

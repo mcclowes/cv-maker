@@ -1,37 +1,136 @@
-<div class="page" id="p1"><h1 class="full-width">Joe Bloggs</h1>
+# cv-maker
 
-<p class="full-width">
-    <a href="mailto:contact@joebloggs.com">contact@joebloggs.com</a> · <a href="tel:+447777888999">+44 (0) 7777 888 999</a> · <a href="https://joebloggs.com">joebloggs.com</a>
-</p>
- <p class="full-width">Some other introduction that sells you as a full stack developer. Keep it brief and ideally heavily tailored to the role. Some other introduction that sells you as a full stack developer. Keep it brief and ideally heavily tailored to the role.</p>
+[![CI](https://github.com/mcclowes/cv-maker/actions/workflows/ci.yml/badge.svg)](https://github.com/mcclowes/cv-maker/actions/workflows/ci.yml)
+[![Spellcheck](https://github.com/mcclowes/cv-maker/actions/workflows/spellcheck.yml/badge.svg)](https://github.com/mcclowes/cv-maker/actions/workflows/spellcheck.yml)
 
-<p class="full-width"><i>References available upon request. You can see what people have said about me <a href="https://github.com/mcclowes/mcclowes/blob/master/recommendations.md">here</a>.</i></p>
+Write your CV in Markdown; get a styled, print-ready **PDF**, a responsive **web
+page**, and a Markdown **README** out the other end. One source of truth, many
+outputs — and a tidy way to keep role-specific variants without copy-pasting.
 
-<hr class="full-width"/>
+> This repo ships with a fictional **Joe Bloggs** CV as a worked example.
+> Fork it, swap in your own details, and build.
 
-<h2 id="technical-skills">Technical Skills</h2>
-<p><strong>Software Engineering:</strong> <em>React (TS), GraphQL/Apollo, Python, Ruby, Node, Jest/react-testing-library/Enzyme, CSS/Styled-Components (Responsive), React Native</em><br><strong>Data:</strong> <em>Python, SQL, R, Excel/Google Sheets</em><br><strong>Project Management:</strong> <em>Agile (Scrum)</em><br><strong>Design:</strong> <em>Figma/Sketch, Adobe CS</em></p>
- <h2 id="experience">Experience</h2>
-<h3 id="software-engineer-fe---facebook">Software Engineer (FE) <em>- Facebook</em></h3>
-<p><em>December 2019 - Ongoing</em></p>
-<p>Here you can do some different working that emphasizes your more full-stack responsibilities - API development, etc.</p>
-<h3 id="other-experience">Other Experience</h3>
-<ul>
-<li>Intern <em>- Google, 2017</em></li>
-<li>QA Tester <em>- EA, 2015</em></li>
-</ul>
- <h2 id="education">Education</h2>
-<h3 id="bsc-hons-computer-science-21---some-university">BSc (Hons) Computer Science, 2:1 <em>- Some University</em></h3>
-<p><em>2018 - 2020</em><br>Dissertation: <em>Some cool use of AI presumably</em></p>
-<h3 id="high-school---vghs">High School <em>- VGHS</em></h3>
-<p><em>2011 - 2018</em><br>A levels: <em>Physics, Economics, Maths</em></p>
-<h3 id="other-training">Other Training</h3>
-<ul>
-<li>Advanced React Programming <em>- Some Place, 2018</em></li>
-<li>Introduction to Web Development <em>- Some Other Place, 2017</em></li>
-</ul>
- <h2 id="about-me">About Me</h2>
-<p>Describe some of your interests here. There&#39;s room for some that feed into your future job, and there&#39;s room for some that are just fun. This is your to chance to show off a bit of personality.</p>
-<p>Describe some of your interests here. There&#39;s room for some that feed into your future job, and there&#39;s room for some that are just fun. This is your to chance to show off a bit of personality.</p>
-<p>Describe some of your interests here. There&#39;s room for some that feed into your future job, and there&#39;s room for some that are just fun. This is your to chance to show off a bit of personality.</p>
-</div>
+![Preview of the generated CV](assets/preview.png)
+
+## How it works
+
+```
+src/cvs/main.md ──┐
+                  │  resolve {{> partials}}  →  one Markdown doc
+src/sections/* ───┘                              │
+                                                 ▼
+                                    marked → HTML  →  Playwright → PDF
+                                                 │
+                              index.html / debug.html / (optional README.md)
+```
+
+Each CV is a single **main file** in `src/cvs/` that composes shared **sections**
+from `src/sections/` using Handlebars-style partials (`{{> header/main }}`). The
+engine resolves the partials, renders Markdown to HTML, applies your chosen
+stylesheet(s), and prints a PDF with Playwright.
+
+## Quick start
+
+**Prerequisites:** [Node.js 20](https://nodejs.org/) (`nvm use` to match `.nvmrc`)
+and the Playwright Chromium browser.
+
+```bash
+npm install
+npx playwright install chromium   # one-time, needed for PDF generation
+npm run build
+```
+
+This builds the primary variant and writes:
+
+| File | What it is |
+|------|------------|
+| `joebloggs_cv.pdf` | Print-ready PDF (the canonical output) |
+| `index.html` | Self-contained responsive web version |
+| `debug.html` | HTML with visible page boundaries, for tweaking layout |
+
+The output base name (`joebloggs_cv`) comes from `outputName` in `cv.config.js`.
+
+## Make it yours
+
+1. **Your details** — edit `cv.config.js` (`meta`: name, email, URL, etc.) and
+   the section files under `src/sections/` (header, introduction, experience,
+   skills, education, awards, about me).
+2. **Compose the CV** — `src/cvs/main.md` decides which sections appear and in
+   what order. Add, remove, or reorder the `{{> ... }}` partials.
+3. **Build** — `npm run build`, then open `index.html` or the PDF.
+
+`src/sections/_template.md` is a full reference for the available formatting,
+CSS classes, page breaks, icons, and entry formats. Start there when writing
+content.
+
+### Role-specific variants
+
+Define more variants in the `cvs` object in `cv.config.js`. A general-purpose
+variant is just a main file in `src/cvs/`. A variant tailored to a specific job
+lives in `src/applications/<name>/` and keeps everything for that application
+together:
+
+- `cv.md` — the tailored CV (the only file that gets built)
+- `jd.md` — the source job description (reference only, never rendered)
+- `cover-letter.md` — your cover letter draft (reference only)
+
+See `src/applications/example/` for a worked example. Build a specific variant
+by passing its key:
+
+```bash
+npm run build -- example
+```
+
+Non-primary variants write `joebloggs_cv_<variant>.pdf` and never overwrite the
+primary's `index.html` / `README.md`.
+
+### Styles
+
+Two stylesheets ship in `src/styles/`: `cv` (default) and `newspaper`. Choose
+per variant via `style: ["cv", "newspaper"]` in its `overrides`. Edit the CSS or
+add your own stylesheet and reference it by filename.
+
+### Render your CV into the repo README (optional)
+
+By default `npm run build` does **not** touch `README.md` (so this documentation
+is safe). If you want your CV to render into the README — handy for a
+`github.com/<you>/<you>` profile repo — set `readme: true` in the primary
+variant's `overrides`.
+
+## Development
+
+```bash
+npm run watch         # rebuild on every change under src/
+npm test              # run the Jest test suite
+npm run lint          # ESLint
+npm run spellcheck    # cspell over CV markdown (add words to cspell.config.json)
+npm run validate      # lint + test
+```
+
+CI (`.github/workflows/ci.yml`) runs lint, spellcheck, tests with coverage, a
+security audit, and a full build on every push and PR.
+
+## Deploying
+
+`index.html` is fully self-contained (inlined CSS), so any static host works —
+drop it on **Vercel**, **Netlify**, or **GitHub Pages**. Point `downloadLink` in
+`cv.config.js` at wherever you publish the PDF to wire up the web download button.
+
+## Project layout
+
+```
+cv.config.js              # who you are + which variants to build
+src/
+  createCV.js             # entry point / CLI
+  cvs/                    # main files (one per general-purpose variant)
+  applications/           # role-specific variants (cv.md + jd.md + cover-letter.md)
+  sections/               # reusable content partials + icons + _template.md
+  styles/                 # cv.css, newspaper.css
+  linkedin.md             # plain-text LinkedIn profile source (not built)
+  generate/               # the HTML + PDF engine
+```
+
+## Acknowledgements
+
+A Markdown-first CV builder. Originally a simple Markdown-to-PDF script, now a
+small composable engine. Contributions and forks welcome.

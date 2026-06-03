@@ -1,0 +1,89 @@
+name: Spellcheck Markdown Files
+
+on:
+  pull_request:
+    paths:
+      # Trigger only when CV source markdown changes
+      - 'src/sections/**/*.md'
+      - 'src/cvs/**/*.md'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  spellcheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository with full history
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full Git history
+
+      # Step 2: Install cspell
+      - name: Install cspell
+        run: |
+          npm install -g cspell
+
+      # Step 3: Get list of changed Markdown files
+      - name: List changed Markdown files
+        id: changed_files
+        run: |
+          # Only CV source markdown (src/sections, src/cvs) is spellchecked
+          SOURCE_FILTER='^src/(sections|cvs)/.*\.md$'
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            BASE_SHA=${{ github.event.pull_request.base.sha }}
+            echo "Comparing against base SHA: $BASE_SHA"
+            CHANGED_FILES=$(git diff --name-only "$BASE_SHA" | grep -E "$SOURCE_FILTER" || true)
+          else
+            echo "Manual or non-PR event detected; checking all CV source Markdown."
+            CHANGED_FILES=$(git ls-files 'src/sections/**/*.md' 'src/cvs/**/*.md' || true)
+          fi
+          # Use heredoc syntax for multi-line values in GITHUB_ENV
+          {
+            echo 'CHANGED_FILES<<EOF'
+            echo "$CHANGED_FILES"
+            echo 'EOF'
+          } >> $GITHUB_ENV
+
+      # Step 4: Run spellcheck on changed files
+      - name: Run cspell
+        if: env.CHANGED_FILES != ''
+        run: |
+          echo "Files to check: $CHANGED_FILES"
+          cspell $CHANGED_FILES | tee spellcheck-result.txt
+
+      # Step 5: Verify results
+      - name: Verify results
+        if: failure()
+        run: |
+          echo "❌ Spellcheck failed. Please fix the errors above."
+
+# Step 5: Post spellcheck results as a PR comment
+      - name: Comment on PR with spellcheck results
+        if: github.event_name == 'pull_request' && env.CHANGED_FILES != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const result = fs.readFileSync('spellcheck-result.txt', 'utf8');
+
+            const output = `
+            ### 📝 Spellcheck Results
+            **Checked files:** \`${process.env.CHANGED_FILES}\`
+
+            **Results:**
+            \`\`\`
+            ${result.trim() || "No spelling errors found!"}
+            \`\`\`
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: output
+            });
