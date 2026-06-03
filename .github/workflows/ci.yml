@@ -55,6 +55,11 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+    env:
+      # Match src/generate/pdf/index.js, which forces browsers into
+      # node_modules/playwright-core/.local-browsers. Without this the install
+      # step would download browsers to ~/.cache/ms-playwright instead.
+      PLAYWRIGHT_BROWSERS_PATH: "0"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -85,6 +90,11 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     needs: [lint, test]
+    env:
+      # Match src/generate/pdf/index.js, which forces browsers into
+      # node_modules/playwright-core/.local-browsers. Without this the install
+      # step would download browsers to ~/.cache/ms-playwright instead.
+      PLAYWRIGHT_BROWSERS_PATH: "0"
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
