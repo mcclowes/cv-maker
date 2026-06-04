@@ -32,7 +32,7 @@
   "author": "mcclowes",
   "license": "ISC",
   "dependencies": {
-    "marked": "^9.0.3",
+    "marked": "^18.0.4",
     "pdf-lib": "^1.17.1",
     "playwright": "^1.56.1"
   },
