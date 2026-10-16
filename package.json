@@ -54,7 +54,7 @@
     "@babel/core": "^7.12.13",
     "@babel/node": "^7.22.19",
     "@babel/preset-env": "^7.22.9",
-    "@eslint/js": "^9.0.0",
+    "@eslint/js": "^10.0.1",
     "babel-jest": "^29.7.0",
     "chokidar-cli": "^3.0.0",
     "cspell": "^10.0.1",
