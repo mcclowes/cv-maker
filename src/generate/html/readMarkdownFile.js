@@ -35,7 +35,7 @@ const isSingleDivWrapper = (html) => {
 
 markdown.use({
   renderer: {
-    html(html) {
+    html({ text: html }) {
       const trimmed = html.trim();
       if (!isSingleDivWrapper(trimmed)) {
         return html;

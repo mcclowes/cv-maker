@@ -2,6 +2,8 @@ module.exports = {
   transform: {
     "^.+\\.js?$": "babel-jest",
   },
+  // marked ships ESM only, so Babel must transform it.
+  transformIgnorePatterns: ["/node_modules/(?!marked/)"],
   collectCoverageFrom: [
     "src/**/*.js",
     "!src/**/__tests__/**",
