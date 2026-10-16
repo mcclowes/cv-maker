@@ -32,9 +32,9 @@
   "author": "mcclowes",
   "license": "ISC",
   "dependencies": {
-    "marked": "^18.0.4",
+    "marked": "^18.1.1",
     "pdf-lib": "^1.17.1",
-    "playwright": "^1.56.1"
+    "playwright": "^1.64.0"
   },
   "bugs": {
     "url": "https://github.com/mcclowes/cv-maker/issues"
@@ -57,12 +57,12 @@
     "@eslint/js": "^9.0.0",
     "babel-jest": "^29.7.0",
     "chokidar-cli": "^3.0.0",
-    "cspell": "^10.0.1",
+    "cspell": "^10.3.6",
     "eslint": "^9.0.0",
     "husky": "^9.1.7",
     "jest": "^29.7.0",
     "lint-staged": "^15.0.0",
-    "prettier": "^3.0.3",
+    "prettier": "^3.9.10",
     "pretty-quick": "^4.0.0"
   }
 }
